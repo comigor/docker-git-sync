@@ -34,6 +34,8 @@ if [ ! -d "${WORKING_DIR}/.git" ]; then
 	git remote add ${GIT_ORIGIN} ${GIT_REPO}
 	git fetch
 	git checkout -t ${GIT_ORIGIN}/${GIT_BRANCH}
+else
+	git branch --set-upstream-to=${GIT_ORIGIN}/${GIT_BRANCH} ${GIT_BRANCH}
 fi
 
 # Configure our user and email to commit as.
