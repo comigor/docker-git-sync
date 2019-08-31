@@ -45,6 +45,9 @@ while true; do
 	# Sleep for the given interval.
 	sleep ${SLEEP_INTERVAL}
 
+	# Pull remote changes
+	git pull
+
 	# Reset our variable for checking whether or not changes were found.
 	CHANGES_FOUND=""
 

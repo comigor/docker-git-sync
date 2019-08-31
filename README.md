@@ -1,17 +1,18 @@
-# docker-git-push
+# docker-git-sync
 This project is a simple script and Docker container for detecting changes to a
-given directory and automatically commiting and pushing any changes to that directory.
+given directory and automatically syncing (pulling & commiting and pushing any
+changes to that directory).
 This can be useful for keeping configuration files in version control automatically
 for applications that like to change them.
 
 ## Build
 ```
-docker build -t "git-push:latest" .
+docker build -t 'git-sync:latest' .
 ```
 
 ## Usage
 ```
-docker run --name git-push -d  \
+docker run --name git-sync -d  \
     -e GIT_REPO="ssh://git@github.com/user/repository.git" \
     -e GIT_BRANCH="master" \
     -e GIT_ORIGIN="origin" \
